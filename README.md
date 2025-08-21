@@ -29,9 +29,28 @@
 
 В качестве итоговых оптимальных параметров было взято **среднее значение** по результатам на всех размеченных наборах.
 
+| Модель | Word2vec Ruswiki | Word2vec Tayga | FastText Tayga |
+| ------ | ---------------- | -------------- | -------------- |
+|eps |1.1 | 1.1 | 0.9 |
+| min_samples | 3 | 4 | 3 |
 
-1. **Подбор параметров и эксперименты на размеченных данных**  
+
+## Запуск
+
+1. **Скачивание моделей дистрибутивной семантики**
+
 
 ```bash
-python train.py 
+cd models && ./download_models.sh
+```
 
+3. **Подбор параметров и эксперименты на размеченных данных**  
+
+```bash
+python train.py --search --model-type [word2vec|fasttext] --model-path PATH_TO_MODEL --method [dbscan|hdbscan|kmeans]
+``` 
+4. **Подбор параметров и эксперименты на размеченных данных**  
+
+```bash
+python train.py --search --model-type [word2vec|fasttext] --model-path PATH_TO_MODEL --method [dbscan|hdbscan|kmeans]
+``` 

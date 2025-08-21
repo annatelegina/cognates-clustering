@@ -6,11 +6,6 @@ from gensim.test.utils import datapath
 from sklearn.cluster import DBSCAN
 from utils import *
 
-def read_json(args):
-    with open(args.input_file) as json_data:
-        input_groups = dict(json.load(json_data))
-    return input_groups
-    
 def main():
 
     parser = argparse.ArgumentParser(description="Cognates clustering")

@@ -7,11 +7,6 @@ from sklearn.cluster import DBSCAN
 from utils import *
 import copy
 
-def read_json(args):
-    with open(args.input_file) as json_data:
-        input_groups = dict(json.load(json_data))
-    return input_groups
-
 def get_centroids(model, dataset):
     embeds = {}
     for k in dataset.keys():

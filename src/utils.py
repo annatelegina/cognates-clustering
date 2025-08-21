@@ -22,6 +22,11 @@ def transform(w):
         word += part.split(':')[0]
     return word
 
+def read_json(args):
+    with open(args.input_file) as json_data:
+        input_groups = dict(json.load(json_data))
+    return input_groups
+
 def read_words(filepath):
     i = 0
     roots = []

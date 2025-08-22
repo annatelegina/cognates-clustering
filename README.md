@@ -44,13 +44,19 @@
 cd models && ./download_models.sh
 ```
 
-3. **Подбор параметров и эксперименты на размеченных данных**  
+2. **Подбор параметров и эксперименты на размеченных данных**  
 
 ```bash
 python train.py --search --model-type [word2vec|fasttext] --model-path PATH_TO_MODEL --method [dbscan|hdbscan|kmeans]
 ``` 
-4. **Подбор параметров и эксперименты на размеченных данных**  
+3. **Кластеризация групп однокоренных слов методом DBSCAN**  
 
 ```bash
-python train.py --search --model-type [word2vec|fasttext] --model-path PATH_TO_MODEL --method [dbscan|hdbscan|kmeans]
+python cluster.py -i INPUT_FILE_PATH --model-type [word2vec|fasttext] --model-path PATH_TO_MODEL --eps EPS --min-samples MIN_SAMPLES
+```
+
+4. **Пополнение групп родственных слов с помощью модели FastText**  
+
+```bash
+python replenish.py -i INPUT_FILE_PATH --model-path PATH_TO_FASTTEXT_MODEL -o PATH_TO_OUTPUT_FILE
 ``` 

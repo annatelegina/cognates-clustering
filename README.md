@@ -21,7 +21,7 @@ This project is dedicated to the automatic recognition of cognates (words sharin
    - For words without embeddings, the FastText model is used.  
    - The target cognate group is determined by cosine similarity between the word vector and cluster centroids. 
 
-## Оптимизация параметров DBSCAN
+## DBSCAN parameters optimization
 
 The parameters `eps` and `min_samples` were tuned via grid search over predefined ranges (`eps`: (0.05, 1.2) with step 0.01, `min_samples`: (3, 22) with step 1).
 For each parameter pair, clustering was run on annotated datasets, and the quality was evaluated using **homogeneity**, **completeness**, and **V-measure**. 

@@ -5,12 +5,12 @@ This project is dedicated to the automatic recognition of cognates (words sharin
 
 1. **Data preprocessing**  
    - The RuMorphs-Lemmas (≈96 thousand of words) dataset with morpheme segmentation is used.  
-   - Words with multiple roots and numerals are excluded, leaving ≈77.8k words.
+   - Words with multiple roots and numerals are excluded, leaving ≈77.8k words (words_1root.txt file).
 
 2. **Forming sets of words with allomorphic and homonymous roots**  
    - All unique roots are extracted.  
-   - Merging rules are applied based on known alternations of consonants and vowels in roots.  
-   - As a result, disjoint sets of words with potentially common roots. 
+   - Merging rules are applied based on known alternations of consonants and vowels in roots (set_hom_allo_roots.txt file).  
+   - As a result, disjoint sets of words with potentially common roots. (words_hom_allo_roots.txt file)
 
 3. **Word embeddings clustering**  
    - For each word in every set, vector representations are taken from Word2Vec and FastText distributional semantic models.  
